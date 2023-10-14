@@ -1,11 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crud Operations</title>
-</head>
-<body>
-    <h2>india is my country</h2>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <title>Crud</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-md text-center">
+        <a class="navbar-brand" href="#">Crud Mini Project</a>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-4">
+          <h2 class="text-white bg-primary text-center">
+            Insert Student Details
+          </h2>
+          <br />
+          <form method="post" action="/insert">
+            {% csrf_token %}
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter the Student Details"
+                name="name"
+                required
+              />
+            </div>
+            <div class="form-group mt-2">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Enter the Student Email"
+                name="email"
+                required
+              />
+            </div>
+            <div class="form-group mt-2">
+              <input
+                type="number"
+                class="form-control"
+                placeholder="Enter the Student Age"
+                name="age"
+                required
+              />
+            </div>
+
+            <div class="from-group mt-2">
+              <select id="gender" class="form-control" name="gender" required>
+                <option selected>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
+            <div class="d-grid gap-2 mt-3">
+              <button class="btn btn-success" type="ubmit">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-8 p-3">2</div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
