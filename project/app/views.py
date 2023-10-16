@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import Student
 
 def index(request):
     return render(request, "index.html")
@@ -12,6 +12,8 @@ def insertData(request):
         age = request.POST.get("age")
         gender = request.POST.get("gender")
         print(name,email,age,gender)
+        query=Student(name=name,email=email,age=age,gender=gender)
+        query.save()
     return render(request, "index.html")
 
 
